@@ -10,7 +10,7 @@ $readUsers = $db->query("SELECT * FROM users");
     <a href="insert.php" class="btn btn-primary float-right"><i class="fa fa-plus"></i> Veri Ekle</a>
   </div>
 </div>
-    <h3 class="text-center">Kullanıcı VerileriX</h3>
+    <h3 class="text-center">Kullanıcıların VerileriX</h3>
     <div class="table-responsive" style="background: #fff;">
     <table class="table table-bordered">
         <thead>
