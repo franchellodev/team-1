@@ -10,6 +10,7 @@ if(isset($_POST['newUserForm'])) {
 
 if(isset($_GET['kullaniciSil'])) {
     $userDelete = $db->query("DELETE FROM users WHERE userId = ".$_GET['kullaniciSil']."");
+    header("Location: index.php");
     
 }
 

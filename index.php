@@ -1,7 +1,7 @@
 <?php 
 include("header.php");
 
-$readUsers = $db->query("SELECT * FROM users");
+$readUsers = $db->query("SELECT userId, userName, userSurname, userEmail FROM users");
 
 ?>
 
@@ -28,7 +28,6 @@ $readUsers = $db->query("SELECT * FROM users");
                 <td><?= $user['userName'] ?></td>
                 <td><?= $user['userSurname'] ?></td>
                 <td><?= $user['userEmail'] ?></td>
-                <td><?= $user['userPassword'] ?></td>
                 <td><a href="edit.php?userEdit=<?= $user['userId'] ?>" class="btn btn-primary" title="Veri Güncelle"><i class="fa fa-edit"></i></a> <a href="functions.php?kullaniciSil=<?= $user['userId'] ?>" class="btn btn-danger" title="Veri Sil">Kullanıcı Sil</a> </td>
             </tr>
             <?php } ?>
