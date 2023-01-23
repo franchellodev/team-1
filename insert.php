@@ -10,19 +10,19 @@ include("header.php");
         <form action="functions.php" method="POST">
             <div class="form-group">
                 <label for="">Ad</label>
-                <input type="text" name="kullaniciAdi" class="form-control">
+                <input type="text" name="kullaniciAdi" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="">Soyad</label>
-                <input type="text" name="userSurname" class="form-control">
+                <input type="text" name="userSurname" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="">E-Posta</label>
-                <input type="text" name="userEmail" class="form-control">
+                <input type="text" name="userEmail" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="">Parola</label>
-                <input type="password" name="userPassword" class="form-control">
+                <input type="password" name="userPassword" class="form-control" required>
             </div>
             <div class="form-group">
                 <button type="submit" name="newUserForm" class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save"></i> Kullanıcı Kaydet</button>
