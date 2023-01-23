@@ -10,7 +10,7 @@ include("header.php");
         <form action="functions.php" method="POST">
             <div class="form-group">
                 <label for="">Ad</label>
-                <input type="text" name="kullaniciAdi" class="form-control" required>
+                <input type="text" name="userName" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="">Soyad</label>
