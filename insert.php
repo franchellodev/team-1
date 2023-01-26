@@ -29,7 +29,9 @@ include("header.php");
                 <input type="text" name="Adres" class="form-control" required>
             </div>
             <div class="form-group">
-                <button  type="submit" name="newUserForm" class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save"></i> Kullanıcıyı Kaydet </button>
+                <button style="background-color:cornsilk" type="submit" name="newUserForm" class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save" style="color:black;"> </i>
+                    <span style="color:black">Kullanıcıyı Kaydet</span>
+                </button>
                 <a href="index.php" class="btn btn-warning mt-3">Geri Dön</a>
             </div>
         </form>

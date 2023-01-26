@@ -27,7 +27,7 @@ $readUsers = $db->query("SELECT Firma_Adi, Yönetici_Ad-Soyad, Telefon, Mail, Ad
 
     <h1 class="text-center" style="font-family:monospace;" > <b> HOŞGELDİNİZ </b>
       <?php 
-      echo $_POST['name'];
+      echo $_POST['username'];
       ?>
     </h1>
   
@@ -66,7 +66,7 @@ $readUsers = $db->query("SELECT Firma_Adi, Yönetici_Ad-Soyad, Telefon, Mail, Ad
                 <td><?= $user['Telefon'] ?></td>
                 <td><?= $user['Mail']?></td>
                 <td><?= $user['Adres']?></td>
-                <td><a href="edit.php?userEdit=<?= $user['kullanici_id'] ?>" class="btn btn-primary" title="Bilgileri Güncelle"><i class="fa fa-edit"></i></a> <a href="functions.php?kullaniciSil=<?= $user['userId'] ?>" class="btn btn-danger" title="Veri Sil">Kullanıcı Sil</a> </td>
+                <td><a href="edit.php?userEdit=<?= $user['kullanici_id'] ?>" class="btn btn-primary" title="Bilgileri Güncelle"><i class="fa fa-edit"></i></a> <a href="functions.php?kullaniciSil=<?= $user['kullanici_adi'] ?>" class="btn btn-danger" title="Veri Sil">Kullanıcı Sil</a> </td>
             </tr>
             <?php } ?>
         </tbody>
