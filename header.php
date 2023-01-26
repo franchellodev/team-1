@@ -16,5 +16,5 @@ include("db.php");
     
     <title>User Deletes</title>
   </head>
-  <body class="p-5" style="background: url(https://media.baamboozle.com/uploads/images/63823/1593533265_786163);background-repeat: no-repeat;
-  background-size: 100%;">
+  <body style="background-color:#0E6655;">
+ 
