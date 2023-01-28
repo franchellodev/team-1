@@ -14,7 +14,7 @@ include("header.php");
             </div>
             <div class="form-group">
                 <label for="">Yönetici Ad-Soyad</label>
-                <input type="text" name="Yönetici_Ad-Soyad" class="form-control" required>
+                <input type="text" name="Yönetici_Ad_Soyad" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="">Telefon</label>

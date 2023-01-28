@@ -16,7 +16,7 @@ $readUsers = $db->query("SELECT * FROM veriler WHERE kullanici_id = ".$_GET['use
             </div>
             <div class="form-group">
                 <label for="">Yönetici Ad-Soyad</label>
-                <input type="text" name="Yönetici_Ad-Soyad" class="form-control" value="<?= $readUsers['Yönetici_Ad-Soyad'] ?>">
+                <input type="text" name="Yönetici_Ad_Soyad" class="form-control" value="<?= $readUsers['Yönetici_Ad_Soyad'] ?>">
             </div>
             <div class="form-group">
                 <label for="">Telefon</label>
