@@ -2,24 +2,16 @@
 include("db.php");
 
 
-
 if(isset($_POST['newUserForm'])) {
-    try {
-        $stmt = $db->prepare("INSERT INTO veriler (Firma_Adi, Yönetici_Ad_Soyad, Telefon, Mail, Adres) VALUES (:Firma_Adi, :Yönetici_Ad_Soyad, :Telefon, :Mail, :Adres)");
-     
-        $stmt->bindValue(':Firma_Adi', $_POST['Firma_Adi']);
-        $stmt->bindValue(':Yönetici_Ad_Soyad', $_POST['Yönetici_Ad_Soyad']);
-        $stmt->bindValue(':Telefon', $_POST['Telefon']);
-        $stmt->bindValue(':Mail', $_POST['Mail']);
-        $stmt->bindValue(':Adres', $_POST['Adres']);
-        $stmt->execute();
+    $readCurrentData = $db->query("SELECT * FROM veriler WHERE Firma_Adi = '".$_POST['Firma_Adi']."' AND Yönetici_Ad_Soyad = '".$_POST['Yönetici_Ad_Soyad']."'")->fetch();
+    if(count($readCurrentData)>1) {
+        echo "Böyle bir kullanıcı bulunmakta.";
+    } else {
+        $newUserInsert = $db->prepare("INSERT INTO veriler SET Firma_Adi = ?, Yönetici_Ad_Soyad = ?, Telefon = ?, Mail = ?, Adres= ?");
+        $newUserInsert->execute(array($_POST['Firma_Adi'], $_POST['Yönetici_Ad_Soyad'], $_POST['Telefon'], $_POST['Mail'], $_POST['Adres']));
         header("Location: index.php");
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
     }
 }
-
-
 
 if(isset($_GET['kullaniciSil'])) {
     
