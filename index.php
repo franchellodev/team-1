@@ -82,7 +82,7 @@ $readUsers = $db->query("SELECT kullanici_id, Firma_Adi, Yönetici_Ad_Soyad, Tel
                 <td><?= $user['Adres']?></td>
                  <td>
                    <a href="edit.php?userEdit=<?= $user['kullanici_id'] ?>" class="btn btn-primary" title="Bilgileri Güncelle"> Düzenle</a> 
-                   <a href="functions.php?kullaniciSil=<?= $user['kullanici_adi'] ?>" class="btn btn-danger" title="Veri Sil">Sil</a>
+                   <a href="functions.php?kullaniciSil=<?= $user['kullanici_id'] ?>" class="btn btn-danger" title="Veri Sil">Sil</a>
                  </td> 
             </tr>
             <?php } ?>

@@ -20,8 +20,8 @@ if(isset($_GET['kullaniciSil'])) {
         $db = new PDO('mysql:host=localhost;dbname=team', 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $stmt = $db->prepare("DELETE FROM veriler ");
-        $stmt->bindParam($_GET['kullaniciSil']);
+        $stmt = $db->prepare("DELETE FROM veriler WHERE kullanici_id=:kullanici_id");
+        $stmt->bindParam(":kullanici_id", $_GET['kullaniciSil']);
         $stmt->execute();
         
         header("Location: index.php");
