@@ -10,6 +10,10 @@ $readUsers = $db->query("SELECT * FROM veriler WHERE kullanici_id = ".$_GET['use
     
     <div class="col-md-6">
         <form action="functions.php" method="POST">
+        <div class="form-group">
+                <label for="">Id</label>
+                <input type="text" name="kullanici_id" class="form-control" value="<?= $readUsers['kullanici_id'] ?>">
+            </div>
             <div class="form-group">
                 <label for="">Firma Adı</label>
                 <input type="text" name="Firma_Adi" class="form-control" value="<?= $readUsers['Firma_Adi'] ?>">

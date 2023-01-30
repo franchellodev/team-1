@@ -1,17 +1,27 @@
 <?php 
 include("db.php");
 
+if (isset($_POST['newUserForm'])) {
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=team', 'root', 'root');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if(isset($_POST['newUserForm'])) {
-    $readCurrentData = $db->query("SELECT * FROM veriler WHERE Firma_Adi = '".$_POST['Firma_Adi']."' AND Yönetici_Ad_Soyad = '".$_POST['Yönetici_Ad_Soyad']."'")->fetch();
-    if(count($readCurrentData)>1) {
-        echo "Böyle bir kullanıcı bulunmakta.";
-    } else {
-        $newUserInsert = $db->prepare("INSERT INTO veriler SET Firma_Adi = ?, Yönetici_Ad_Soyad = ?, Telefon = ?, Mail = ?, Adres= ?");
-        $newUserInsert->execute(array($_POST['Firma_Adi'], $_POST['Yönetici_Ad_Soyad'], $_POST['Telefon'], $_POST['Mail'], $_POST['Adres']));
-        header("Location: index.php");
+        $readCurrentData = $db->prepare("SELECT * FROM veriler WHERE Firma_Adi = ? AND Yönetici_Ad_Soyad = ?");
+        $readCurrentData->execute(array($_POST['Firma_Adi'], $_POST['Yönetici_Ad_Soyad']));
+        $currentData = $readCurrentData->fetch();
+        if ($currentData) {
+            echo "Böyle bir kullanıcı bulunmakta.";
+        } else {
+            $newUserInsert = $db->prepare("INSERT INTO veriler (Firma_Adi, Yönetici_Ad_Soyad, Telefon, Mail, Adres) VALUES (?,?,?,?,?)");
+            $newUserInsert->execute(array($_POST['Firma_Adi'], $_POST['Yönetici_Ad_Soyad'], $_POST['Telefon'], $_POST['Mail'], $_POST['Adres']));
+            header("Location: index.php");
+        }
+    } catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
 }
+
+
 
 if(isset($_GET['kullaniciSil'])) {
     
