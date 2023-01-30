@@ -8,6 +8,10 @@ include("header.php");
     
     <div class="col-md-6">
         <form action="functions.php" method="POST">
+        <div class="form-group">
+                <label for="">Id</label>
+                <input type="text" name="kullanici_id" class="form-control" required>
+            </div>
             <div class="form-group">
                 <label for="">Firma Adı</label>
                 <input type="text" name="Firma_Adi" class="form-control" required>
@@ -32,7 +36,7 @@ include("header.php");
                 <button style="background-color:cornsilk" type="submit" name="newUserForm" class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save" style="color:black;"> </i>
                     <span style="color:black">Kullanıcıyı Kaydet</span>
                 </button>
-                <a href="index.php" class="btn btn-warning mt-3">Geri Dön</a>
+                <a href="index.php" style="background-color: #FFF8DC;border:none" class="btn btn-warning mt-3">Geri Dön</a>
             </div>
         </form>
     </div>
