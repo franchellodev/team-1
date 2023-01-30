@@ -32,8 +32,8 @@ $readUsers = $db->query("SELECT * FROM veriler WHERE kullanici_id = ".$_GET['use
             </div>
             <div class="form-group">
                 <input type="hidden" name="kullanici_id" value="<?= $readUsers['kullanici_id'] ?>">
-                <button type="submit" name="editUserForm" class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save"></i> Bilgileri Güncelle </button>
-                <a href="index.php" class="btn btn-warning mt-3">Geri Dön</a>
+                <button type="submit" name="editUserForm"  class="btn btn-primary text-center btn-block mt-5" value="1"><i class="fa fa-save"></i> Bilgileri Güncelle </button>
+                <a href="index.php" style="background-color: #FFF8DC;border:none" class="btn btn-warning mt-3">Geri Dön</a>
             </div>
         </form>
     </div>
